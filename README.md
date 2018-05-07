@@ -72,8 +72,10 @@ docker run -d \
 -m 500M \
 -v "$(pwd)/prometheus.yml":/prometheus.yml \
 -v "$(pwd)/data":/data \
+--link monitor \
+--link monitor \
 prom/prometheus \
--config.file=/prometheus.yml \
+--config.file=/prometheus.yml \
 -log.level=info
 ```
 访问测试
